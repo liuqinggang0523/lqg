@@ -8,4 +8,10 @@ var publicUrl = {
   logout_url: Url + '/admin/logout',
   // 获取用户信息
   loginfo_url: Url + '/admin/getuser',
+  // 获取文章类别
+  show_url: Url + '/admin/category_add',
+  // 删除文章类别
+  del_url: Url + '/admin/category_delete',
+  // 编辑文章类别
+  edit_url: Url + "/admin/category_edit",
 }

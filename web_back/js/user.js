@@ -1,3 +1,4 @@
+// 用户js文件
 var user = {
   // 此接口有两个参数，所以需要设置参数接受
   login: function(userName, password, callback) {
