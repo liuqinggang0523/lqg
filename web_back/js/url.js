@@ -9,7 +9,9 @@ var publicUrl = {
   // 获取用户信息
   loginfo_url: Url + '/admin/getuser',
   // 获取文章类别
-  show_url: Url + '/admin/category_add',
+  show_url: Url + '/admin/category_search',
+  // 新增文章类别
+  add_url: Url + '/admin/category_add',
   // 删除文章类别
   del_url: Url + '/admin/category_delete',
   // 编辑文章类别
