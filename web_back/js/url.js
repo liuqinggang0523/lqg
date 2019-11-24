@@ -16,4 +16,10 @@ var publicUrl = {
   del_url: Url + '/admin/category_delete',
   // 编辑文章类别
   edit_url: Url + "/admin/category_edit",
+  // 文章列表获取文章信息
+  article_show: Url + '/admin/search',
+  // 文章删除
+  article_del: Url + '/admin/article_delete',
+  // 发布文章
+  article_publish: Url + '/admin/article_publish',
 }
