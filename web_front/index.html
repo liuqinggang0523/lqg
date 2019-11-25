@@ -28,23 +28,10 @@
         <div class="menu">
             <div class="menu_collapse fl">
                 <a href="javascript:;" class="level_one"><i class="fa fa-list-ul"></i>全部分类</a>
-                <ul class="level_two">
-                    <li class="up"></li>
-                    <li><a href="#">最 新</a></li>
-                    <li><a href="#">科 技</a></li>
-                    <li><a href="#">股 市</a></li>
-                    <li><a href="#">商 品</a></li>
-                    <li><a href="#">外 汇</a></li>
-                    <li><a href="#">公 司</a></li>
+                <ul class="level_two" id="level_two">
                 </ul>
             </div>
-            <ul class="left_menu fl">
-                <li><a href="#">最 新</a></li>
-                <li><a href="#">科 技</a></li>
-                <li><a href="#">股 市</a></li>
-                <li><a href="#">商 品</a></li>
-                <li><a href="#">外 汇</a></li>
-                <li><a href="#">公 司</a></li>
+            <ul class="left_menu fl" id="menu_type">
             </ul>
             <ul class="right_menu fr">
                 <li><a href="#">科技专题</a></li>
@@ -54,28 +41,8 @@
     </div>
 
     <div class="main_con clearfix">
-        <div class="left_con">
-            <ul class="focus_list">
-                <li class="first">
-                    <a href="#"><img src="images/pic01.jpg" alt=""></a>
-                    <p>图片说明</p>
-                </li>
-                <li>
-                    <a href="#"><img src="images/pic02.jpg" alt=""></a>
-                    <p>图片说明图片说明图片说明图片说明图片说明图片说明图片说明图片说明图片说明</p>
-                </li>
-                <li>
-                    <a href="#"><img src="images/pic03.jpg" alt=""></a>
-                    <p>图片说明</p>
-                </li>
-                <li>
-                    <a href="#"><img src="images/pic05.jpg" alt=""></a>
-                    <p>图片说明</p>
-                </li>
-                <li>
-                    <a href="#"><img src="images/pic06.jpg" alt=""></a>
-                    <p>图片说明</p>
-                </li>
+        <div class="left_con" id="content">
+            <ul class="focus_list" id="cover">
             </ul>
 
             <div class="common_title">
@@ -215,12 +182,59 @@
             <span>|</span>
             <a href="#">招聘人才</a>
             <span>|</span>
-            <a href="#">友情链接</a>		
+            <a href="#">友情链接</a>
         </div>
-        <p>CopyRight © 2019 深圳大事件信息技术股份有限公司   All Rights Reserved</p>
-        <p>电话：0755-****888    粤ICP备*******8号</p>
+        <p>CopyRight © 2019 深圳大事件信息技术股份有限公司 All Rights Reserved</p>
+        <p>电话：0755-****888 粤ICP备*******8号</p>
     </div>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/template-web.js"></script>
+    <script src="./js/url.js"></script>
+    <script src="./js/article.js"></script>
+    <!-- 模板引擎 -->
+    <script id="temp" type="text/html">
+        {{each data item}}
+        <li><a href="#">{{item.name}}</a></li>
+        {{/each}}
+    </script>
+    <!-- ########################################## -->
+    <script id="temp2" type="text/html">
+        <li class="up"></li>
+        {{each data item}}
+        <li><a href="#">{{item.name}}</a></li>
+        {{/each}}
+    </script>
+    <!-- ############################################# -->
+    <script id="temp_cover" type="text/html">
+        {{each data item idx}} {{if idx == 0}}
+        <li class="first">
+            <a href="article.html?id={{item.id}}"><img src={{item.cover}} alt='{{item.title}}'></a>
+            <p>{{item.title}}</p>
+        </li>
+        {{else}}
+        <li>
+            <a href="article.html?id={{item.id}}"><img src={{item.cover}} alt='{{item.title}}'></a>
+            <p>{{item.title}}</p>
+        </li>
+        {{/if}} {{/each}}
+    </script>
 
+    <!-- ###################################################### -->
+    <script>
+        // 显示文章分类
+        category.show(function(res) {
+                var htmlStr = template('temp', res)
+                var htmlStr2 = template('temp2', res)
+                $('#menu_type').html(htmlStr)
+                $('#level_two').html(htmlStr2)
+            })
+            // 显示文章封面
+        category.article_show(function(res) {
+            console.log(res);
+            var htmlStr = template('temp_cover', res)
+            $('#cover').html(htmlStr)
+        })
+    </script>
 </body>
 
 </html>

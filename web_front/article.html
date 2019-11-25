@@ -28,23 +28,10 @@
         <div class="menu">
             <div class="menu_collapse fl">
                 <a href="javascript:;" class="level_one"><i class="fa fa-list-ul"></i>全部分类</a>
-                <ul class="level_two">
-                    <li class="up"></li>
-                    <li><a href="#">最 新</a></li>
-                    <li><a href="#">科 技</a></li>
-                    <li><a href="#">股 市</a></li>
-                    <li><a href="#">商 品</a></li>
-                    <li><a href="#">外 汇</a></li>
-                    <li><a href="#">公 司</a></li>
+                <ul class="level_two" id="level_two">
                 </ul>
             </div>
-            <ul class="left_menu fl">
-                <li><a href="#">最 新</a></li>
-                <li><a href="#">科 技</a></li>
-                <li><a href="#">股 市</a></li>
-                <li><a href="#">商 品</a></li>
-                <li><a href="#">外 汇</a></li>
-                <li><a href="#">公 司</a></li>
+            <ul class="left_menu fl" id="menu_type">
             </ul>
             <ul class="right_menu fr">
                 <li><a href="#">科技专题</a></li>
@@ -56,17 +43,16 @@
     <div class="main_con clearfix">
         <div class="left_con setfr">
             <div class="breadcrumb">
-                当前位置： <a href="#">首页</a> &gt; <a href="#">科技</a> &gt; 文章详情
+                当前位置： <a href="#">首页</a> &gt; <a href="#" id="type">科技</a> &gt; 文章详情
             </div>
-            <h3 class="article_title">马斯克的新花样？连接人脑和电脑的初创公司又筹了一笔钱</h3>
-            <div class="article_info">杰克 发布于 2019-05-08 07:08:46&nbsp;&nbsp;&nbsp;分类: 奇趣事&nbsp;&nbsp;&nbsp;阅读:
-                (98)&nbsp;&nbsp;&nbsp;评论: (0)</div>
-            <div class="article_con">
+            <h3 class="article_title" id="title">马斯克的新花样？连接人脑和电脑的初创公司又筹了一笔钱</h3>
+            <div class="article_info"> <span id="author"></span> 发布于<span id="date"></span>&nbsp;&nbsp;&nbsp;分类: <span id="type1"></span>&nbsp;&nbsp;&nbsp;阅读: (98)&nbsp;&nbsp;&nbsp;评论: (0)</div>
+            <div class="article_con" id="content">
 
                 <p>“上天入地”还不够？硅谷“钢铁侠”马斯克名下一家低调的公司最近又融了一大笔钱。</p>
 
-                <p>马斯克投资的一家小型且不为人熟知的脑机接口（brain-computer
-                    interface）公司Neuralink披露，该公司融到了3900万美元，虽然不及公司计划的融资额5100万美元，但也比上次的融资多了不少。</p>
+                <p>马斯克投资的一家小型且不为人熟知的脑机接口（brain-computer interface）公司Neuralink披露，该公司融到了3900万美元，虽然不及公司计划的融资额5100万美元，但也比上次的融资多了不少。
+                </p>
 
                 <p>两年前该公司曾计划融资1亿美元，但只拿到了2700万美元的融资。</p>
 
@@ -76,28 +62,27 @@
 
             </div>
             <div class="article_links">
-                上一篇： <a href="#">世界第一台可以玩游戏的冰箱</a><br>
-                下一篇： <a href="#">世界第一个可以玩游戏的马桶、世界上第一个可以玩游戏的茶杯</a>
+                上一篇： <a href="#">世界第一台可以玩游戏的冰箱</a><br> 下一篇： <a href="#">世界第一个可以玩游戏的马桶、世界上第一个可以玩游戏的茶杯</a>
             </div>
 
             <form action="" class="comment_form">
                 <div class="form_group">
                     <label>用户名：</label>
-                    <input type="text" placeholder="请输入用户名" class="comment_name">
+                    <input type="text" placeholder="请输入用户名" class="comment_name" id="comment_user">
                 </div>
                 <div class="form_group">
                     <label>评论内容：</label>
-                    <textarea placeholder="请发表您的评论" class="comment_input"></textarea>
+                    <textarea placeholder="请发表您的评论" class="comment_input" id="comment_content"></textarea>
                 </div>
                 <div class="form_group">
-                    <input type="submit" name="" value="评 论" class="comment_sub"></div>
+                    <input type="button" name="" value="评 论" class="comment_sub" id="comment"></div>
             </form>
 
             <div class="comment_count">
-                4条评论
+                <span id="comment_count"></span>条评论
             </div>
 
-            <div class="comment_list_con">
+            <div class="comment_list_con" id="comment_list">
                 <div class="comment_detail_list">
                     <div class="person_pic fl">乔</div>
                     <div class="name_time fl"><b>虚竹</b><span>4小时前</span></div>
@@ -105,27 +90,7 @@
                         遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
                     </div>
                 </div>
-                <div class="comment_detail_list">
-                    <div class="person_pic fl">段</div>
-                    <div class="name_time fl"><b>虚竹</b><span>4小时前</span></div>
-                    <div class="comment_text fl">
-                        遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
-                    </div>
-                </div>
-                <div class="comment_detail_list">
-                    <div class="person_pic fl">虚</div>
-                    <div class="name_time fl"><b>虚竹</b><span>4小时前</span></div>
-                    <div class="comment_text fl">
-                        遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
-                    </div>
-                </div>
-                <div class="comment_detail_list">
-                    <div class="person_pic fl">王</div>
-                    <div class="name_time fl"><b>虚竹</b><span>4小时前</span></div>
-                    <div class="comment_text fl">
-                        遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="right_con setfl">
@@ -204,7 +169,112 @@
         <p>CopyRight © 2019 深圳大事件信息技术股份有限公司 All Rights Reserved</p>
         <p>电话：0755-****888 粤ICP备*******8号</p>
     </div>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/template-web.js"></script>
+    <script src="./js/url.js"></script>
+    <script src="./js/article.js"></script>
+    <script src="./js/dayjs/dayjs.min.js"></script>
+    <script src="./js/dayjs/relative.min.js"></script>
+    <script src="./js/dayjs/zh_cn.js"></script>
+    <!-- 模板引擎 -->
+    <script id="temp" type="text/html">
+        {{each data item}}
+        <li><a href="#">{{item.name}}</a></li>
+        {{/each}}
+    </script>
+    <!-- ########################################## -->
+    <script id="temp2" type="text/html">
+        <li class="up"></li>
+        {{each data item}}
+        <li><a href="#">{{item.name}}</a></li>
+        {{/each}}
+    </script>
+    <!-- ################################################ -->
+    <script id="temp_comment" type="text/html">
+        {{each data item}}
+        <div class="comment_detail_list">
+            <div class="person_pic fl">{{item.name.substr(0,1)}}</div>
+            <div class="name_time fl"><b>{{item.name}}</b><span>{{item.relativeDt}}</span></div>
+            <div class="comment_text fl">
+                {{item.content}}
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script>
+        // dayjs插件
+        dayjs.extend(dayjs_plugin_relativeTime);
+        // 显示文章分类
+        category.show(function(res) {
+            var htmlStr = template('temp', res)
+            var htmlStr2 = template('temp2', res)
+            $('#menu_type').html(htmlStr)
+            $('#level_two').html(htmlStr2)
+        })
+        var id = location.search.substr(4)
+        category.article_xiang(id, function(res) {
+                // console.log(res);
+                var typeId = res.data.type
+                $('#title').text(res.data.title)
+                $('#date').text(res.data.date)
+                $('#author').text(res.data.author)
+                $('#content').text(res.data.content)
 
+                // 在文章详情数据中，res.data.type保存是类型的编号
+                // 但是，要显示在页面上的却要是类型的名称。
+                // 思路： 
+                //  1. 先取出所有的类型数据
+                //  2. 在其中找出编号与res.data.type相同的那一项，再取出它的名称
+                category.show(function(res) {
+                    // console.log(res);
+                    // 接下来，就是要在result.data这个数组中，找出哪一项它的id==res.data.type？
+                    var rs = res.data.find(function(item) {
+                        if (item.id == typeId) {
+                            return true;
+                        }
+                    })
+                    if (rs) {
+                        $('#type').text(rs.name)
+                        $('#type1').text(rs.name)
+                    }
+                })
+            })
+            // 点击发表评论
+        $('#comment').click(function() {
+                var name = $('#comment_user').val().trim()
+                var content = $('#comment_content').val().trim()
+                if (name === '200' || content === '') {
+                    alert('内容不能为空')
+                    return
+                }
+                category.article_comment(name, content, id, function(res) {
+                    if (res.code === 200) {
+                        $('#comment_user').val('')
+                        $('#comment_content').val('')
+                        getShow();
+                    } else {
+                        alert(res.msg)
+                    }
+                })
+
+            })
+            // 展示评论列表
+        function getShow() {
+            category.comment_list(id, function(res) {
+                // 评论总条数
+                $('#comment_count').text(res.data.length)
+                res.data.forEach(function(item) {
+                        dayjs.locale('zh-cn')
+                        item.relativeDt = dayjs(item.dt).toNow()
+                    })
+                    // 反转数组，按时间远近
+                res.data.reverse()
+                var htmlStr = template('temp_comment', res);
+                $('#comment_list').html(htmlStr)
+            })
+        }
+        getShow()
+    </script>
 </body>
 
 </html>

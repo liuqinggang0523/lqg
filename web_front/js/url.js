@@ -10,4 +10,8 @@ var publicUrl = {
   edit_url: Url + "/admin/category_edit",
   // 文章列表获取文章信息
   article_show: Url + '/admin/search',
+  // 发表评论
+  article_comment: Url + '/post_comment',
+  // 评论列表
+  comment_list: Url + '/get_comments'
 }
