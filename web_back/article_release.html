@@ -81,6 +81,7 @@
     <script src="./js/template-web.js"></script>
     <script src="./js/url.js"></script>
     <script src="./js/article_category.js"></script>
+    <script src="./js/article_list.js"></script>
     <!-- 模板引擎 -->
     <script type="text/html" id="temp">
         {{each data item}}
@@ -107,23 +108,19 @@
             // 获取表单信息
             // 通过formData来收集表单信息,里面的参数必须是表单dom节点,注意!!!一定要设置表单元素name属性
             var fd = new FormData(document.getElementById('myForm'))
-            console.log(fd.get('cover'));
+                // console.log(fd.get('cover'));
+                // 手动添加参数
             fd.append('state', '已发布')
-            $.ajax({
-                url: 'http://localhost:8000/admin/article_publish',
-                type: 'post',
-                date: fd,
-                processData: false, // 不要让jquery自动去转换data
-                contentType: false, // 不要自动给content-type设置值。因为formData传参会有自己的请求头 multipart/form-data
-                success: function(res) {
-                    if (res.success === true) {
-                        location.href = './article_list.html'
-                    } else {
-                        alert(res.msg)
-                    }
+                // 获取富文本中的内容，需要调用它自己的API，不能直接从textarea中获取，
+            fd.set('content', tinyMCE.activeEditor.getContent())
+            list.article_fabu(fd, function(res) {
+                if (res.code === 201) {
+                    confirm('发布成功');
+                    location.href = 'article_list.html'
+                } else {
+                    alert(res.msg)
                 }
             })
-
         })
     </script>
 </body>

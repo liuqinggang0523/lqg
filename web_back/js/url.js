@@ -22,4 +22,6 @@ var publicUrl = {
   article_del: Url + '/admin/article_delete',
   // 发布文章
   article_publish: Url + '/admin/article_publish',
+  // 修改文章
+  article_edit: Url + '/admin/article_edit',
 }
