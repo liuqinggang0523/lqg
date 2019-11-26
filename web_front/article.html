@@ -213,7 +213,7 @@
         })
         var id = location.search.substr(4)
         category.article_xiang(id, function(res) {
-                // console.log(res);
+                console.log(res);
                 var typeId = res.data.type
                 $('#title').text(res.data.title)
                 $('#date').text(res.data.date)
@@ -226,7 +226,7 @@
                 //  1. 先取出所有的类型数据
                 //  2. 在其中找出编号与res.data.type相同的那一项，再取出它的名称
                 category.show(function(res) {
-                    // console.log(res);
+                    console.log(res);
                     // 接下来，就是要在result.data这个数组中，找出哪一项它的id==res.data.type？
                     var rs = res.data.find(function(item) {
                         if (item.id == typeId) {

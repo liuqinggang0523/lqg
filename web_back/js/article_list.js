@@ -6,15 +6,11 @@ var list = {
       page: curPage,
       type: type,
       state: state,
-    }, function(res) {
-      callback(res)
-    })
+    }, res => callback(res))
   },
   // 删除文章
   article_del: function(id, callback) {
-    $.get(publicUrl.article_del, { 'id': id }, function(res) {
-      callback(res)
-    })
+    $.get(publicUrl.article_del, { 'id': id }, res => callback(res))
   },
   // 发布文章
   article_fabu: function(fd, callback) {
@@ -24,9 +20,7 @@ var list = {
       data: fd,
       processData: false, // 不要让jquery自动去转换data
       contentType: false, // 不要自动给content-type设置值。因为formData传参会有自己的请求头 multipart/form-data
-      success: function(res) {
-        callback(res)
-      }
+      success: res => callback(res)
     })
   },
   // 编辑文章
@@ -43,9 +37,7 @@ var list = {
       data: fd,
       processData: false, // 不要让jquery自动去转换data
       contentType: false,
-      success: function(res) {
-        callback(res)
-      }
+      success: res => callback(res)
     })
   }
 }

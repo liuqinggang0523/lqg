@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/iconfont.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery-1.12.4.min.js"></script>
-
 </head>
 
 <body>
@@ -20,50 +18,91 @@
             用户信息修改
         </div>
         <div class="container-fluid common_con">
-            <form class="form-horizontal article_form">
+            <form class="form-horizontal article_form" id="myForm">
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">用户名称：</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="inputEmail3" value="李思思">
+                        <input type="text" name="username" class="form-control" id="username" value="李思思">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">昵称：</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="inputEmail3" value="思思">
+                        <input type="text" name="nickname" class="form-control" id="nicheng" value="思思">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">邮箱：</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="inputEmail3" value="lisisi@126.com">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">用户图标：</label>
-                    <div class="col-sm-10">
-                        <img src="images/2.jpg" alt="" class="user_pic">
-                        <input type="file" id="exampleInputFile">
+                        <input type="text" name="email" class="form-control" id="eml" value="lisisi@126.com">
                     </div>
                 </div>
 
                 <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">密码：</label>
-                        <div class="col-sm-4">
-                            <input type="password" class="form-control" id="inputEmail3" value="12345678">
-                        </div>
+                    <label for="inputPassword3" class="col-sm-2 control-label">用户图标：</label>
+                    <div class="col-sm-10">
+                        <img src="images/2.jpg" alt="" class="user_pic" id="user_pic">
+                        <input type="file" name="user_pic" id="exampleInputFile">
                     </div>
-               
-    
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">密码：</label>
+                    <div class="col-sm-4">
+                        <input type="password" name="password" class="form-control" id="password" value="12345678">
+                    </div>
+                </div>
+
+
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-success">修改</button>
+                        <button type="button" class="btn btn-success" id="edit">修改</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="./js/url.js"></script>
+    <script src="./js/user.js"></script>
+    <script>
+        // 获取管理员信息
+        getShow()
+
+        function getShow() {
+            user.user_get(function(res) {
+                // console.log(res);
+                $('#username').val(res.data.username)
+                $('#nicheng').val(res.data.nickname)
+                $('#eml').val(res.data.email)
+                $('#user_pic').prop('src', res.data.user_pic)
+                $('#password').val(res.data.password)
+            })
+        }
+        // // 图片预览功能
+        // $('#exampleInputFile').change(function() {
+        //         console.log(123);
+        //         var file = this.files[0]
+        //         if (file) {
+        //             var url = URL.createObjectURL(file)
+        //             $('#user_pic').prop('src', file)
+        //         }
+        //     })
+        // 点击修改
+        $('#edit').click(function() {
+            // console.log(123);
+            var fd = new FormData(document.getElementById('myForm'))
+            user.editInfo(fd, function(res) {
+                // console.log(res);
+                if (res.code === 200) {
+                    confirm('修改成功')
+                    getShow()
+                } else {
+                    alert(res.msg)
+                }
+            })
+        })
+    </script>
 
 </body>
 

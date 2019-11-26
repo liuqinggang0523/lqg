@@ -1,7 +1,7 @@
 // 把地址公用的信息单独拿出来，以全局变量来保存
 // 可以单独工作修改
-var Url = 'http://localhost:8000'
-var publicUrl = {
+const Url = 'http://localhost:8000'
+let publicUrl = {
   // 登录
   login_url: Url + '/admin/login',
   // 退出
@@ -24,4 +24,8 @@ var publicUrl = {
   article_publish: Url + '/admin/article_publish',
   // 修改文章
   article_edit: Url + '/admin/article_edit',
+  // 获取管理员信息
+  user_get: Url + '/admin/userinfo_get',
+  // 编辑用户信息
+  user_edit: Url + '/admin/userinfo_edit'
 }

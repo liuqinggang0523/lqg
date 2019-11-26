@@ -145,7 +145,7 @@
 
         // 文章管理加载并显示类别
         function getAndShow() {
-            category.show(function(res) {
+            category.show(res => {
                 if (res.code === 200) {
                     var htmlStr = template("temp", res)
                         // 显示在dom容器中
@@ -177,7 +177,7 @@
                 alert('内容不能为空')
                 return
             }
-            category.add(name, slug, function(res) {
+            category.add(name, slug, res => {
                 if (res.code === 200) {
                     getAndShow()
                         // 成功后内容清空,模态框隐藏
@@ -212,7 +212,7 @@
             var id = $('#ID').val().trim()
             var name = $('#lei').val().trim();
             var slug = $('#bie').val().trim();
-            category.edit(id, name, slug, function(res) {
+            category.edit(id, name, slug, res => {
                 if (res.code === 200) {
                     getAndShow()
                     $('#saveModal').modal('hide');
